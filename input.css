@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* class for nay button in website  */
+.btn {
+  @apply bg-color-secondary font-bold capitalize rounded-md px-9 py-3 hover:opacity-80 ease-in duration-200;
+}
+.card-btn {
+  @apply py-3 px-9 capitalize text-xl font-bold border border-solid border-color-gray bg-color-primary-light w-full rounded-md duration-200 ease-in hover:bg-color-secondary hover:text-color-primary-dark;
+}
+
+.title {
+  @apply text-3xl mb-4 md:text-4xl font-bold leading-snug;
+}
+
+.blob1 {
+  @apply w-80 h-80 bg-color-blob absolute top-0 -left-5 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full;
+}
+
+.blob2 {
+  @apply w-80 h-80 rounded-full overflow-hidden absolute bg-color-secondary right-0 bottom-10 -z-10 opacity-30 blur-3xl;
+}
+.user-pic {
+  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+}
+.user-text {
+  display: none;
+}
+
+.user-pic.active-pic {
+  @apply border-2 border-color-secondary;
+}
+
+.user-text.active-text {
+  display: block;
+  animation: moveup 1s linear forwards;
+  -webkit-animation: moveup 1s linear forwards;
+}
+
+@keyframes moveup {
+  0% {
+    margin-top: 40px;
+    opacity: 0;
+  }
+  50% {
+    margin-top: 20px;
+    opacity: 0.1;
+  }
+  100% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+.card {
+  /* control on z form 0 to 1000px for 3D effect */
+  perspective: 1000px;
+}
+
+.front,
+.back {
+  /*to hide backface of div during rotation */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* *********************** */
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+}
+
+.front {
+  overflow: hidden;
+}
